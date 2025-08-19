@@ -42,9 +42,9 @@ export default function ProfileHeader() {
     })
 
     return (
-        <header className="h-[100px] bg-container-color-2">
+        <header className="md:h-[100px] p-5 md:p-0 bg-container-color-2">
             <div className="container mx-auto h-full px-[5%]">
-                <div className="header-wrapper flex items-center justify-between h-full">
+                <div className="header-wrapper flex items-center gap-3 md:gap-0 justify-between h-full flex-col md:flex-row">
                     {/* USER AVATAR */}
 
                     <div className="header-avatar h-[65px] w-[65px] relative rounded-full overflow-hidden border-3 border-text-color shadow-xs shadow-white">
@@ -64,13 +64,18 @@ export default function ProfileHeader() {
                         <strong className="text-xl text-text-color font-bold">{user?.username}</strong>
                     </div>
 
-                    <div>
+                    <div className="flex gap-3 items-center flex-col sm:flex-row">
                         <Button disabled={isPending} onClick={() => mutate()} variant="destructive" size="lg" className="transform hover:-translate-y-[2px]">
                             Logout
                             {isPending && (
                                 <Loader2Icon className="animate-spin" />
                             )}
                         </Button>
+                        {user && user.role === "ADMIN" && (
+                            <Button onClick={() => router.push("/admin/dashboard")} variant="auth" size="lg" className="transform hover:-translate-y-[2px] !w-max text-white">
+                                Admin Panel
+                            </Button>
+                        )}
                     </div>
                 </div>
             </div>

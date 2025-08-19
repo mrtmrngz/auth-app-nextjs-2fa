@@ -93,7 +93,11 @@ export default function VerifyOtpPageClient() {
                             break;
                         case OtpCodes.TWO_FACTOR_ENABLED:
                         case OtpCodes.LOGIN_SUCCESS:
-                            router.push("/")
+                            window.location.href = "/"
+                            break;
+                        case OtpCodes.EMAIL_CHANGED:
+                        case OtpCodes.USERNAME_CHANGED:
+                            window.location.href = "/"
                             break;
                     }
                 }
