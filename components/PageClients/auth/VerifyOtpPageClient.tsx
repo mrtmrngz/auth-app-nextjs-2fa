@@ -79,7 +79,7 @@ export default function VerifyOtpPageClient() {
 
                         const user_data = await response.json()
                         setUser(user_data)
-                        router.push("/")
+                        window.location.href = "/"
                     }catch (err: unknown) {
                         console.error("Fetch error:", err)
                         toast.error("Network error occurred")

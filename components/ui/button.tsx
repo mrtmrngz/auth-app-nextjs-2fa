@@ -20,7 +20,9 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        auth: 'w-full h-[50px] bg-[linear-gradient(135deg,#667eea_0%,_#764ba2_100%)] py-5! px-7! disabled:cursor-no-drop'
+        auth: 'w-full h-[50px] bg-[linear-gradient(135deg,#667eea_0%,_#764ba2_100%)] py-5! px-7! disabled:cursor-no-drop',
+        success: "w-max !px-7 !py-5 bg-green-500 !text-white text-semibold !rounded-lg transition-all duration-300 hover:shadow-sm hover:shadow-green-400 !text-sm",
+        cancel: "w-max !px-7 !py-5 !bg-transparent border border-[#4b5563] !text-[#9ca3af] text-semibold !rounded-lg !text-sm hover:!bg-[rgba(55,65,81,0.8)]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

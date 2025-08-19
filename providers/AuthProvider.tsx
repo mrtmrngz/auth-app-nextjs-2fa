@@ -8,7 +8,10 @@ type UserTypes = {
     username: string;
     email: string;
     role: "USER" | "ADMIN";
-    avatar?: string;
+    avatar?: {
+        url: string;
+        public_id: string
+    };
     isVerified: boolean;
     isTwoFactorEnabled: boolean
 }
