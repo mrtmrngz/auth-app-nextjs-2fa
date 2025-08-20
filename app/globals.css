@@ -28,8 +28,8 @@
     --chart-3: oklch(0.398 0.07 227.392);
     --chart-4: oklch(0.828 0.189 84.429);
     --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar: #131A2A;
+    --sidebar-foreground: #fff;
     --sidebar-primary: oklch(0.205 0 0);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.97 0 0);
@@ -39,7 +39,7 @@
     --text-color: #6E62C3;
     --container-bg-1: #1F2937;
     --container-bg-2: #131A2A;
-    --gradient-bg: linear-gradient(135deg,#667eea 0%, #764ba2 100%);
+    --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 @theme inline {
@@ -126,6 +126,7 @@
     * {
         @apply border-border outline-ring/50;
     }
+
     body {
         @apply bg-background text-foreground;
     }
@@ -143,7 +144,7 @@
     }
 
     input {
-        padding: 8px 8px 8px 12px!important;
+        padding: 8px 8px 8px 12px !important;
     }
 
     .auth-form-group {
@@ -166,5 +167,35 @@
         background-color: var(--text-color);
         border-radius: 100%;
         display: inline-block;
+    }
+
+    .users-table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #fff;
+        border: 1px solid #1F2937;
+
+        th {
+            padding: 15px 10px;
+            font-size: 14px;
+            border-bottom: 1px solid #1F2937;
+            border-right: 1px solid #1F2937;
+            text-align: left;
+        }
+
+        tbody tr {
+            border: none !important;
+            border-bottom: 1px solid #1F2937;
+        }
+
+        tbody tr:not(:last-child) td {
+            border-bottom: 1px solid #1F2937 !important;
+        }
+
+        td {
+            border-right: 1px solid #1F2937 !important;
+            padding: 14px 5px;
+            font-size: 14px !important;
+        }
     }
 }

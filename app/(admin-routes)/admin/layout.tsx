@@ -3,6 +3,8 @@ import {cookies} from "next/headers";
 import {redirect} from "next/navigation";
 import {Metadata} from "next";
 import {SidebarProvider} from "@/components/ui/sidebar";
+import AdminSidebar from "@/components/Admin/AdminSidebar";
+import AdminHeader from "@/components/Admin/AdminHeader";
 
 export const metadata: Metadata = {
     title: "Auth App | Admin Panel"
@@ -58,10 +60,10 @@ export default async function Layout({children}: {children: ReactNode}) {
 
     return (
         <SidebarProvider>
-            <div className="h-screen p-3 bg-red-600 text-white text-5xl font-bold">SIDEBAR HERE</div>
+            <AdminSidebar />
             <main className="w-full">
-                <div className="h-[100] w-full bg-container-color-2">SIDEBAR HEADER HERE</div>
-                <section className="pl-[3%] bg-blue-600">
+                <AdminHeader />
+                <section className="w-full min-h-[calc(100vh-80px)]" style={{background: "var(--gradient-bg)"}}>
                     {children}
                 </section>
             </main>
